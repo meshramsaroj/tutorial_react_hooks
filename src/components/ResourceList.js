@@ -1,5 +1,7 @@
 import React from 'react';
 import useResources from './useResources';
+import '../css/hookApp.css'
+
 
 // const useResources = (resourceName)=>{
 //   const [resources, setResources] = useState([]);
@@ -23,7 +25,14 @@ const ResourceList = ({ resourceName }) => {
     return (
     <ul>
       {resources.map(resource => (
-        <li key={resource.id}>{resource.title}</li>
+      <div className="Row">
+
+          <li key={resource.id}><strong>{resource.title}</strong></li>
+          <p>
+          {resource.body}
+          </p>
+
+      </div>
       ))}
     </ul>
   )

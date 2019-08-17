@@ -1,6 +1,6 @@
 import React, { useState, } from 'react';
-import { Button, Container, Row, Col } from 'reactstrap';
-
+import { Button, Container, Row, Col,ButtonGroup, ButtonToolbar } from 'reactstrap';
+import Users from './Users'
 import ResourceList from './ResourceList';
 
 
@@ -15,8 +15,14 @@ const App = () => {
         </Row>
         <Row>
           <Col>
+          <ButtonToolbar>
+            <ButtonGroup>
             <Button color="success" onClick={() => setResourceName('posts')}>Posts</Button>{'   '}
             <Button color="primary" onClick={() => setResourceName('todos')}>Todos</Button>
+            <Button  onClick={() => setResourceName('users')}>Users</Button>
+
+            </ButtonGroup>
+          </ButtonToolbar>
 
           </Col>
           <Col>
@@ -25,6 +31,7 @@ const App = () => {
         </Row>
         <Row>
           <ResourceList resourceName={resourceName} />
+          <Users userName={resourceName}/>
 
         </Row>
       </Container>
